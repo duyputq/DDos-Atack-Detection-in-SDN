@@ -24,7 +24,7 @@ switches = []
 def hostToSwitch(net, switch, host):
     net.addLink(switch, host)
 
-
+#ham nay viet xong khong dung
 def switchToSwitch(net, switch1, switch2):
     net.addLink(switch1, switch2)
 
@@ -49,7 +49,7 @@ def myNetwork():
                            controller=RemoteController,
                            ip='127.0.0.1',
                            protocol='tcp',
-                           port=6633)
+                           port=6633) 
 
     info('*** Add switches\n')
     s1 = net.addSwitch('s1', cls=OVSKernelSwitch)
@@ -92,7 +92,7 @@ def myNetwork():
     net.get('s1').start([c0])
     # print(hosts)
 
-    info('*** Post configure switches and hosts\n')
+    info('*** Post configure switches and hosts\pn')
     p_s1 = Process(target=net.get('s1').cmd, args=(
         'source del_port.sh',))
     # p1 = Process(target=net.get('h1').cmd, args=('ettercap -T -i h1-eth0 -M ARP /10.0.0.3// /10.0.0.7//',))

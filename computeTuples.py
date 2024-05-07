@@ -5,7 +5,7 @@ import time
 import os
 import psutil
 
-HOME = '/home/xp'
+HOME = '/home/duy'
 time_interval = 1
 
 
@@ -112,20 +112,20 @@ subARP = ARP_Reply - ARP_Request
 with open('f1.csv', 'r') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
     reader = list(reader)
-
-if int(reader[-1][-1]) > 0:
-    if subARP >= 1:
-        miss_match = 1
-    else:
-        miss_match = 0
-else:
-    miss_match = 0
+miss_match = 0
+# if int(reader[-1][-1]) > 0:
+#     if subARP >= 1:
+#         miss_match = 1
+#     else:
+#         miss_match = 0
+# else:
+#     miss_match = 0
 # time stamp with minute:second format
 time_stamp = time.strftime("%H:%M:%S", time.localtime())
 # APS: ARP per second, ABPS: ARP broadcast per second, SUBARP: ARP reply - ARP request, MISS_MAC: miss match
 
-ddos = 1
-slow_rate = 1
+ddos = 0
+slow_rate = 0   
 mitm = 0
 tag_ddos = ''
 tag_slow_rate = ''

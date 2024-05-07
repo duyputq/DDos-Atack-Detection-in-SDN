@@ -1,0 +1,8 @@
+1.custom_intervian: tao topology
+ham nay tao topology giua chi 1 switch va rat nhieu host (64) host nhu binh thuong
+tuy nhien, moi 8 host lai co mot gateway rieng.
+
+2.traffic
+-chay file traffic thi se moi lan chay se them 1 cai dc ket noi connected trong pox controller
+
+3.computeTuples.py
