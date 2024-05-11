@@ -124,8 +124,8 @@ miss_match = 0
 time_stamp = time.strftime("%H:%M:%S", time.localtime())
 # APS: ARP per second, ABPS: ARP broadcast per second, SUBARP: ARP reply - ARP request, MISS_MAC: miss match
 
-ddos = 0
-slow_rate = 0   
+ddos = 1
+slow_rate = 0
 mitm = 0
 tag_ddos = ''
 tag_slow_rate = ''
@@ -143,10 +143,10 @@ else:
     tag = tag_ddos + tag_slow_rate + tag_mitm
 
 headers = ["SSIP", "SDFP", "SDFB", "SFE", "RFIP",
-           "CPU", "APS", "ABPS", "SUBARP", "MISS_MAC", "DDOS", "SLOW-RATE", "MITM", "TAGS"]
+           "CPU",  "DDOS", "SLOW-RATE", "MITM", "TAGS"]
 
 features = [ssip, sdfp, sdfb, sfe, rfip, cpu_percent,
-            aps, abps, subARP, miss_match, ddos, slow_rate, mitm, tag]
+             ddos, slow_rate, mitm, tag]
 
 file_exists = os.path.isfile('features-file.csv')
 with open('features-file.csv', 'a') as f:

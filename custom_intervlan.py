@@ -95,7 +95,7 @@ def myNetwork():
     info('*** Post configure switches and hosts\pn')
     p_s1 = Process(target=net.get('s1').cmd, args=(
         'source del_port.sh',))
-    # p1 = Process(target=net.get('h1').cmd, args=('ettercap -T -i h1-eth0 -M ARP /10.0.0.3// /10.0.0.7//',))
+    # p1 = Process(target=net.get('h1').cmd, args=('ettercap -T -i h1-eth0 -M ARP /10.0.0.3// /10.0.0.7//',)
     p_s1.start()
     info('*** Configuring gateway for hosts\n')
     for i in range(1, 49):
